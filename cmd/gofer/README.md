@@ -44,13 +44,14 @@ Simple price model for the `BTC/USD` asset pair may look like this:
 
 ```hcl
 gofer {
-  price_model "BTC/USD" "median" {
-    source "BTC/USD" "origin" { origin = "bitfinex" }
-    source "BTC/USD" "origin" { origin = "coinbasepro" }
-    source "BTC/USD" "origin" { origin = "kraken" }
+  price_model "ETH/GSU" "median" {
+    source "ETH/GSU" "origin" { origin = "gsu" }
+    source "ETH/GSU" "origin" { origin = "gsu1" }
+    source "ETH/GSU" "origin" { origin = "gsu2" }
     min_sources = 1
   }
 }
+
 ```
 
 Each `price_model` and `source` block has two labels. The first label is an asset pair name written as `XXX/YYY`,
@@ -114,6 +115,9 @@ Supported origins:
 - `uniswapV2` - [Uniswap V2](https://uniswap.org/)
 - `uniswapV3` - [Uniswap V3](https://uniswap.org/blog/uniswap-v3/)
 - `upbit` - [Upbit](https://upbit.com/)
+- `gsu` - [https://api.gsucoin.app/Products/GSULive/?symbol=]
+- `gsu1` - [https://api1.gsucoin.app/Products/GSULive/?symbol=]
+- `gsu2` - [https://api2.gsucoin.app/Products/GSULive/?symbol=]
 - `.` - Special origin that refers to other price models.
 
 ### Origins configuration
