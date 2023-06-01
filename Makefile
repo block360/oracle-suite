@@ -2,7 +2,7 @@ PACKAGE ?= gofer
 GO_FILES := $(shell { git ls-files; } | grep ".go$$")
 LICENSED_FILES := $(shell { git ls-files; } | grep ".go$$")
 
-BUILD_DIR := bin
+BUILD_DIR ?= bin
 BUILD_TARGET := $(BUILD_DIR)/gofer $(BUILD_DIR)/spire $(BUILD_DIR)/keeman
 BUILD_FLAGS ?= all
 
